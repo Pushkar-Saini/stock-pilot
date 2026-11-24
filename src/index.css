@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --color-canvas: #f5f5f2;
+  --color-surface: #ffffff;
+  --color-line: #e6e5e0;
+  --color-line-strong: #d4d3cc;
+  --color-ink: #1c1d1f;
+  --color-ink-2: #4f5052;
+  --color-ink-3: #7c7d7f;
+
+  --color-brand: #14532d;
+  --color-brand-600: #166534;
+  --color-brand-50: #ecf5ef;
+
+  --color-ok: #15803d;
+  --color-ok-bg: #e9f6ee;
+  --color-warn: #c2570c;
+  --color-warn-bg: #fdf1e6;
+  --color-crit: #c0262d;
+  --color-crit-bg: #fcebeb;
+
+  --color-series-1: #2a78d6;
+  --color-series-2: #eb6834;
+  --color-series-3: #1baf7a;
+  --color-series-4: #eda100;
+  --color-series-5: #e87ba4;
+  --color-series-6: #008300;
+  --color-series-7: #6250d6;
+  --color-series-8: #e34948;
+
+  --shadow-card: 0 1px 2px rgba(20, 20, 15, 0.04), 0 1px 1px rgba(20, 20, 15, 0.03);
+  --shadow-pop: 0 12px 32px -8px rgba(20, 20, 15, 0.18), 0 2px 6px rgba(20, 20, 15, 0.06);
+}
+
+html, body, #root { height: 100%; }
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+@keyframes fade-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.animate-fade-up { animation: fade-up 0.22s ease-out both; }
+@keyframes slide-in { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: none; } }
+.animate-slide-in { animation: slide-in 0.25s ease-out both; }
+
+.pixel-font { font-family: 'Press Start 2P', var(--font-mono); }
+
+/* the Phaser canvas */
+.game-host canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; }
+
+:focus-visible { outline: 2px solid var(--color-brand-600); outline-offset: 2px; }
+
+input[type='number']::-webkit-inner-spin-button { opacity: 0.4; }
